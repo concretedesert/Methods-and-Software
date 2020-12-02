@@ -28,16 +28,24 @@ class Tourplan:
         depot = Request((0,0), (0,0), 0)
         depot.end_time = 1000000 # M, oder Begrenzung
         self.tourenplan = [(depot, 0), (depot, 1)] # 0: origin, 1: destination
+        self.coordinates = [(depot.start_loc), (depot.dest_loc)]
         
     def euclidean_distance(loc1, loc2):
         return ((loc1[0] - loc2[0])**2 + (loc1[1] - loc2[1])**2)**0.5
     
     def insert_costs(self, request, i, j):
         if j - i == 1:
-            cost = self.euclidean_distance(self.tourenplan[i-1], request.start_loc)
-            + self.euclidean_distance(request.start_loc, request.dest_loc)
-            - self.euclidean_distance(self.tourenplan[i-1], [i])
-            # hier weitermachen cost+=
+            return self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
+            + self.euclidean_distance(request.start_loc, request.dest_loc) \
+            + self.euclidean_distance(request.dest_loc, self.coordinates[i]) \
+            - self.euclidean_distance(self.coordinates[i-1], self.coordinates[i])
+        else:
+            return self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
+            + self.euclidean_distance(request.start_loc, self.coordinates[i]) \
+            + self.euclidean_distance(self.coordinates[j-1], request.dest_loc) \
+            + self.euclidean_distance(request.dest_loc, self.coordinates[j]) \
+            - self.euclidean_distance(self.coordinates[i-1], self.coordinates[i]) \
+            - self.euclidean_distance(self.coordinates[j-1], self.coordinates[j])
     
     def insert_feasible(self, request, i, j):
         return True # Zeitfenster implementieren
