@@ -33,8 +33,8 @@ class Request:
         return self.req_time <= t_dest <= self.end_time
     
     def set_visit_times(self, t_origin, t_dest):
-        if self.check_visit_times(t_origin, t_dest):
-            raise("Fehlerhafte Besuchszeiten")
+        if not self.check_visit_times(t_origin, t_dest):
+            raise ValueError("Fehlerhafte Besuchszeiten")
         self.visit_origin = t_origin
         self.visit_dest = t_dest
         
