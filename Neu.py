@@ -137,8 +137,6 @@ class Tourplan:
         
         request.visit_origin = t_start
         request.visit_dest = t_dest
-    
-        
 
 # Wie entscheiden, welcher Kunde zuerst eingefügt wird
 
@@ -160,5 +158,19 @@ def parallel_insertion(tourplan, requests):
             tourOpt.insert(reqIns, iOpt, jOpt)
             requests.remove(reqIns)
 
-def LNS():
-    pass
+def LNS(beta, y1, y2, tourplan, t):
+    for i in range(beta):
+        pass
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
