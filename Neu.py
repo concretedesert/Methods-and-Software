@@ -101,11 +101,44 @@ class Tourplan:
                     return False
         
         return True
+    
+    def update_visit_times(self, request, i, j):
+        lag_start = self.insert_costs_single(request.start_loc, i)
+        lag_dest = self.insert_costs_single(request.dest_loc, j) \
+            + lag_start
+        
+        for place in self.tourenplan[i:j]:
+            if place[1] == 0:
+                place[0].visit_origin += lag_start
+            else:
+                place[0].visit_origin += lag_dest
+        
+        for place in self.tourenplan[j:]:
+            if place[1] == 0:
+                place[0].visit_origin += lag_start
+            else:
+                place[0].visit_origin += lag_dest
         
     
-    
     def insert(self, request, i, j):
-        self.tourenplan()
+        t_start = self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
+            + self.euclidean_distance(request.start_loc, self.coordinates[i])
+        lag_start = self.insert_costs_single(request.start_loc, i)
+        t_dest = self.euclidean_distance(self.coordinates[j-1], request.dest_loc) \
+            + self.euclidean_distance(request.dest_loc, self.coordinates[j]) \
+            + lag_start
+        
+        self.update_visit_times(request, i, j)
+        
+        self.tourenplan.insert(j, (request, 1))
+        self.tourenplan.insert(i, (request, 0))
+        self.coordinates.insert(j, request.dest_loc)
+        self.coordinates.insert(i, request.start_loc)
+        
+        request.visit_origin = t_start
+        request.visit_dest = t_dest
+    
+        
 
 # Wie entscheiden, welcher Kunde zuerst eingefügt wird
 
@@ -126,4 +159,6 @@ def parallel_insertion(tourplan, requests):
         if pOpt < M: # Breaken, falls nicht einfügbar?
             tourOpt.insert(reqIns, iOpt, jOpt)
             requests.remove(reqIns)
-    
+
+def LNS():
+    pass
