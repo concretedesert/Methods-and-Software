@@ -51,10 +51,10 @@ class Tourplan:
     
     def insert_costs(self, request, i, j):
         if j - i == 1:
-            return self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
-            + self.euclidean_distance(request.start_loc, request.dest_loc) \
-            + self.euclidean_distance(request.dest_loc, self.coordinates[i]) \
-            - self.euclidean_distance(self.coordinates[i-1], self.coordinates[i])
+            return (Tourplan.euclidean_distance(self.coordinates[i-1], request.start_loc) 
+            + Tourplan.euclidean_distance(request.start_loc, request.dest_loc) 
+            + Tourplan.euclidean_distance(request.dest_loc, self.coordinates[i]) 
+            - Tourplan.euclidean_distance(self.coordinates[i-1], self.coordinates[i]))
         else:
             return self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
             + self.euclidean_distance(request.start_loc, self.coordinates[i]) \
