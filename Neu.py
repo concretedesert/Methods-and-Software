@@ -46,7 +46,7 @@ class Tourplan:
         self.tourenplan = [(depot, 0), (depot, 1)] # 0: origin, 1: destination
         self.coordinates = [(depot.start_loc), (depot.dest_loc)]
         
-    def euclidean_distance(loc1, loc2):
+    def euclidean_distance(self, loc1, loc2):
         return ((loc1[0] - loc2[0])**2 + (loc1[1] - loc2[1])**2)**0.5
     
     def get_coordinates(self, pos):
@@ -57,22 +57,21 @@ class Tourplan:
             coord_before = self.get_coordinates(i-1)
             coord_after = self.get_coordinates(i)
             
-            return (Tourplan.euclidean_distance(coord_before, request.start_loc) 
-            + Tourplan.euclidean_distance(request.start_loc, request.dest_loc) 
-            + Tourplan.euclidean_distance(request.dest_loc, coord_after) 
-            - Tourplan.euclidean_distance(coord_before, coord_after))
+            return (self.euclidean_distance(coord_before, request.start_loc) 
+            + self.euclidean_distance(request.start_loc, request.dest_loc) 
+            + self.euclidean_distance(request.dest_loc, coord_after) 
+            - self.euclidean_distance(coord_before, coord_after))
         else:
-            return self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
-            + self.euclidean_distance(request.start_loc, self.coordinates[i]) \
-            + self.euclidean_distance(self.coordinates[j-1], request.dest_loc) \
-            + self.euclidean_distance(request.dest_loc, self.coordinates[j]) \
-            - self.euclidean_distance(self.coordinates[i-1], self.coordinates[i]) \
-            - self.euclidean_distance(self.coordinates[j-1], self.coordinates[j])
+            return (self.insert_costs_single(request.start_loc, i)
+                    + self.insert_costs_single(request.dest_loc, j))
     
-    def insert_costs_single(self, loc, i): # startordest = 0 / 1
-        return self.euclidean_distance(self.coordinates[i-1], loc) \
-        + self.euclidean_distance(loc, self.coordinates[i]) \
-        - self.euclidean_distance(self.coordinates[i-1], self.coordinates[i]) 
+    def insert_costs_single(self, loc, i):
+        coord_before = self.get_coordinates(i-1)
+        coord_after = self.get_coordinates(i)
+        
+        return (self.euclidean_distance(coord_before, loc) 
+        + self.euclidean_distance(loc, coord_after) 
+        - self.euclidean_distance(coord_before, coord_after)) 
     
     def insert_feasible(self, request, i, j):
         t_start = self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
