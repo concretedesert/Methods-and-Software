@@ -29,8 +29,8 @@ class Request:
     def check_visit_start(self, t_origin):
         return self.req_time <= t_origin <= self.end_time
     
-    def check_visit_dest(self, t_origin, t_dest):
-        return self.req_time <= t_dest <= self.end_time and t_dest > t_origin 
+    def check_visit_dest(self, t_dest):
+        return self.req_time <= t_dest <= self.end_time
     
     def set_visit_times(self, t_origin, t_dest):
         if self.check_visit_times(t_origin, t_dest):
@@ -83,7 +83,24 @@ class Tourplan:
         
         for place in self.tourenplan[i:j]:
             if place[1] == 0:
-                
+                if not place[0].check_visit_start(place[0].visit_origin + lag_start):
+                    return False
+            else:
+                if not place[0].check_visit_dest(place[0].visit_dest + lag_start):
+                    return False
+        
+        if not request.check_visit_times(t_dest, t_dest):
+            return False
+        
+        for place in self.tourenplan[j:]:
+            if place[1] == 0:
+                if not place[0].check_visit_start(place[0].visit_origin + lag_dest):
+                    return False
+            else:
+                if not place[0].check_visit_dest(place[0].visit_dest + lag_dest):
+                    return False
+        
+        return True
         
     
     
