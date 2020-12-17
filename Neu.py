@@ -74,14 +74,14 @@ class Tourplan:
         - self.euclidean_distance(coord_before, coord_after)) 
     
     def insert_feasible(self, request, i, j):
-        t_start = self.euclidean_distance(self.coordinates[i-1], request.start_loc) \
-            + self.euclidean_distance(request.start_loc, self.coordinates[i])
+        t_start = (self.euclidean_distance(self.coordinates[i-1], request.start_loc)
+            + self.euclidean_distance(request.start_loc, self.coordinates[i]))
         lag_start = self.insert_costs_single(request.start_loc, i)
-        t_dest = self.euclidean_distance(self.coordinates[j-1], request.dest_loc) \
-            + self.euclidean_distance(request.dest_loc, self.coordinates[j]) \
-            + lag_start
-        lag_dest = self.insert_costs_single(request.dest_loc, j) \
-            + lag_start
+        t_dest = (self.euclidean_distance(self.coordinates[j-1], request.dest_loc)
+            + self.euclidean_distance(request.dest_loc, self.coordinates[j]) 
+            + lag_start)
+        lag_dest = (self.insert_costs_single(request.dest_loc, j) 
+            + lag_start)
         
         if not request.check_visit_times(t_start, t_start):
             return False
