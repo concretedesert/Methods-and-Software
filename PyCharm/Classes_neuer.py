@@ -107,7 +107,25 @@ class Tour:
 
 
 class Decision_Epoch:
-    pass
+
+    def __init__(self, tours, request):
+        self.time = request.req_t
+        # Position, an der sich das Vehikel zum Zeitpunkt des Requests befindet (Notwendig?)
+        # self.tours_loc = []
+        # Requests, die sich im Zeitpunkt time in einem Vehikel befinden (in-progress)
+        self.tours_req_in_prog = []
+        # Requests, die im Zeitpunkt time auf ein Vehikel warten (waiting)
+        self.tours_req_waiting = []
+        for tour in tours:
+            left = [e for e in self.early if e < self.time]
+            right = [e for e in self.early if e >= self.time]
+            if self.time > tour.early[-2]:
+                self.tours_loc.append()
+
+class Epoch:
+
+    def __init__(self, tours, ):
+        pass
 
 def parallel_insertion(tours, requests, M=sys.maxsize):
     reject = []
@@ -152,3 +170,6 @@ def parallel_insertion(tours, requests, M=sys.maxsize):
             requests = []
 
     return tours, reject
+
+def LNS():
+    pass
