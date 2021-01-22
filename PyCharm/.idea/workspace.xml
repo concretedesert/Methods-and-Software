@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Python.b_Classes">
+  <component name="RunManager" selected="Python.aus_jupyter">
     <configuration name="Classes_neu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyCharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -42,27 +42,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Classes_neu.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Probieren" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PyCharm" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Probieren.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,6 +92,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="aus_jupyter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyCharm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aus_jupyter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="b_Classes" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyCharm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.aus_jupyter" />
         <item itemvalue="Python.b_Classes" />
         <item itemvalue="Python.a_Classes" />
         <item itemvalue="Python.Probieren2" />
         <item itemvalue="Python.Classes_neu" />
-        <item itemvalue="Python.Probieren" />
       </list>
     </recent_temporary>
   </component>
@@ -174,50 +174,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1609185474631" />
+    <state x="655" y="165" key="#xdebugger.XInspectDialog" timestamp="1611274297389">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="655" y="165" key="#xdebugger.XInspectDialog/0.0.1536.824@0.0.1536.824" timestamp="1611274297388" />
+    <state x="524" y="115" key="#xdebugger.evaluate" timestamp="1611276145972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="524" y="115" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1611276145972" />
     <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1610756859196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610756859196" />
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1611244136399">
+    <state width="1515" height="240" key="GridCell.Tab.0.bottom" timestamp="1611308472918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611244136399" />
-    <state width="1515" height="261" key="GridCell.Tab.0.center" timestamp="1611244136392">
+    <state width="1515" height="240" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611308472918" />
+    <state width="1515" height="240" key="GridCell.Tab.0.center" timestamp="1611308472918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611244136392" />
-    <state width="1515" height="261" key="GridCell.Tab.0.left" timestamp="1611244136392">
+    <state width="1515" height="240" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611308472918" />
+    <state width="1515" height="240" key="GridCell.Tab.0.left" timestamp="1611308472918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611244136392" />
-    <state width="1515" height="261" key="GridCell.Tab.0.right" timestamp="1611244136392">
+    <state width="1515" height="240" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611308472918" />
+    <state width="1515" height="240" key="GridCell.Tab.0.right" timestamp="1611308472918">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611244136392" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1611244137302">
+    <state width="1515" height="240" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611308472918" />
+    <state width="1515" height="240" key="GridCell.Tab.1.bottom" timestamp="1611308474128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611244137302" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1611244137302">
+    <state width="1515" height="240" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611308474128" />
+    <state width="1515" height="240" key="GridCell.Tab.1.center" timestamp="1611308474128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611244137302" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1611244137302">
+    <state width="1515" height="240" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611308474128" />
+    <state width="1515" height="240" key="GridCell.Tab.1.left" timestamp="1611308474128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611244137302" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1611244137302">
+    <state width="1515" height="240" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611308474128" />
+    <state width="1515" height="240" key="GridCell.Tab.1.right" timestamp="1611308474128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611244137302" />
+    <state width="1515" height="240" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611308474128" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1608292608617">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608292608617" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1611239403097">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1611262293873">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1611239403097" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1611262293873" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1610027183062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -227,9 +235,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/b_Classes.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/aus_jupyter.py</url>
+          <line>392</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
